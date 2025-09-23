@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>SIXFILMS</title>
+    <link rel="icon" href="IMG/LOGO_CINEMA.jpg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h2 class="menu-encabezado">SIXFILMS</h2>
+        <ul>
+            <li><a href="index.html">INICIO</a></li>
+            <li class="menu-separator">|</li>
+            <li><a href="#PELICULAS">PELICULAS</a></li>
+            <li><a href="#SERIES">SERIES</a></li>
+            <li><a href="#ANIME">ANIME</a></li>
+            <li><a href="#ADULT-SWIT">ADULT-SWIT</a></li>
+            <li class="menu-separator">|</li>
+            <li><a href="#CALCULADORA">CALCULADORA</a></li>
+            <li><a href="acercade.html">ACERCA DE</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <section id="PELICULAS">
+            <h1>PELICULAS</h1>
+            <div class="carousel-container">
+                <button class="carousel-btn prev" data-section="peliculas">&#10094;</button>
+                <div class="carousel-track" id="carousel-peliculas">
+                    <img src="IMG/PELICULAS/SAW.jpg" alt="SAW" data-content="saw">
+                    <img src="IMG/PELICULAS/MEGA-2.0.jpg" alt="mega-2" data-content="mega2">
+                    <img src="IMG/PELICULAS/Ready_Player_One.png" alt="Ready_Player_One_" data-content="readyplayer">
+                    <img src="IMG/PELICULAS/AVES DE PRESA.jpg" alt="AVES" data-content="aves">
+                    <img src="IMG/PELICULAS/SPIDERMAN.jpg" alt="SPIDERMAN" data-content="spiderman">
+                </div>
+                <button class="carousel-btn next" data-section="peliculas">&#10095;</button>
+            </div>
+        </section>
+        
+        <section id="SERIES">
+            <h1>SERIES</h1>
+            <div class="carousel-container">
+                <button class="carousel-btn prev" data-section="series">&#10094;</button>
+                <div class="carousel-track" id="carousel-series">
+                    <img src="IMG/SERIES/EL JUEGO DEL CALAMAR.jpg" alt="el el-juego-del-calamar-temporada-3" data-content="squidgame">
+                    <img src="IMG/SERIES/MERLINA.jpg" alt="MERLINA" data-content="wednesday">
+                    <img src="IMG/SERIES/THE BIG THEORY.jpg" alt="THEORY" data-content="bigbang">
+                    <img src="IMG/SERIES/DOS CHICAS QUEBRADAS.jpg" alt="dos CHICAS" data-content="brokegirls">
+                    <img src="IMG/SERIES/stranger things.jpg" alt="things" data-content="stranger">
+                </div>
+                <button class="carousel-btn next" data-section="series">&#10095;</button>
+            </div>
+        </section>
+        
+        <section id="ANIME">
+            <h1>ANIME</h1>
+            <div class="carousel-container">
+                <button class="carousel-btn prev" data-section="anime">&#10094;</button>
+                <div class="carousel-track" id="carousel-anime">
+                    <img src="IMG/ANIME/boku-no-hero-academy.jpg" alt="boku-no-hero-academy" data-content="myhero">
+                    <img src="IMG/ANIME/CIBERY PUNK.jpg" alt="ciber PUNK" data-content="cyberpunk">
+                    <img src="IMG/ANIME/DEMON SLAYER.jpg" alt="DEMON" data-content="demonslayer">
+                    <img src="IMG/ANIME/ONE PUCH MAN.jpg" alt="ONE PUCH MAN" data-content="onepunch">
+                    <img src="IMG/ANIME/One_Piece_Film_Red_.jpg" alt="ONE PIECE" data-content="onepiece">
+                </div>
+                <button class="carousel-btn next" data-section="anime">&#10095;</button>
+            </div>
+        </section>
+        
+        <section id="ADULT-SWIT">
+            <h1>ADULT-SWIT</h1>
+            <div class="carousel-container">
+                <button class="carousel-btn prev" data-section="adult">&#10094;</button>
+                <div class="carousel-track" id="carousel-adult">
+                    <img src="IMG/ADULT-SWIG/CIRCUS DIGITAL.jpg" alt="CIRCUS DIGITAL" data-content="circus">
+                    <img src="IMG/ADULT-SWIG/PANTY Y STOCKING.jpg" alt="PANTY Y STOCKING" data-content="panty">
+                    <img src="IMG/ADULT-SWIG/rick-and-morty.jpg" alt="rick-and-morty" data-content="rickmorty">
+                    <img src="IMG/ADULT-SWIG/HARLEY QUINN.jpg" alt="HARLEY" data-content="harley">
+                    <img src="IMG/ADULT-SWIG/LA CASA DE LOS DIBUJOS.jpg" alt="la casa de LOS DIBUJOS" data-content="casadibujos">
+                </div>
+                <button class="carousel-btn next" data-section="adult">&#10095;</button>
+            </div>
+        </section>
+
+        <!-- NUEVA SECCIÓN CALCULADORA -->
+        <section id="CALCULADORA">
+            <h1>CALCULADORA GORE</h1>
+            <div class="calculadora-container">
+                <div class="calculadora">
+                    <div class="pantalla">0</div>
+                    
+                    <!-- Primera fila: Controles y paréntesis -->
+                    <button id="c" class="btn control">C</button>
+                    <button id="borrar" class="btn control">←</button>
+                    <button class="btn parentesis" data-operator>(</button>
+                    <button class="btn parentesis" data-operator>)</button>
+                    <button id="igual" class="btn igual">=</button>
+                    
+                    <!-- Segunda fila -->
+                    <button class="btn">7</button>
+                    <button class="btn">8</button>
+                    <button class="btn">9</button>
+                    <button class="btn" data-operator>÷</button>
+                    <button class="btn function" data-function="sin">sin</button>
+                    
+                    <!-- Tercera fila -->
+                    <button class="btn">4</button>
+                    <button class="btn">5</button>
+                    <button class="btn">6</button>
+                    <button class="btn" data-operator>×</button>
+                    <button class="btn function" data-function="cos">cos</button>
+                    
+                    <!-- Cuarta fila -->
+                    <button class="btn">1</button>
+                    <button class="btn">2</button>
+                    <button class="btn">3</button>
+                    <button class="btn" data-operator>-</button>
+                    <button class="btn function" data-function="sqrt">√</button>
+                    
+                    <!-- Quinta fila -->
+                    <button id="cero" class="btn">0</button>
+                    <button class="btn">.</button>
+                    <button class="btn" data-operator>+</button>
+                    <button class="btn function" data-function="pi">π</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="social-box">
+            <h3>Síguenos en redes sociales</h3>
+            <div class="social-icons">
+                <div class="social-item">
+                    <a href="https://www.facebook.com/share/1JBGWSmTxZ/" target="_blank" title="Facebook">
+                        <img src="IMG/LOGO/FACEBOOK.jpeg" alt="Facebook">
+                    </a>
+                    <a class="social-link" href="https://www.facebook.com/share/1JBGWSmTxZ/" target="_blank">Facebook</a>
+                </div>
+                <div class="social-item">
+                    <a href="https://www.instagram.com/gilz156?igsh=MThsNmVrZ25xZjF6OA==" target="_blank" title="Instagram">
+                        <img src="IMG/LOGO/INSTAGRAM.jpeg" alt="Instagram">
+                    </a>
+                    <a class="social-link" href="https://www.instagram.com/gilz156?igsh=MThsNmVrZ25xZjF6OA==" target="_blank">Instagram</a>
+                </div>
+                <div class="social-item">
+                    <a href="https://www.tiktok.com/@gilz156?_t=ZS-8zPO5d12XTU&_r=1" target="_blank" title="TikTok">
+                        <img src="IMG/LOGO/TIKTOK.png" alt="TikTok">
+                    </a>
+                    <a class="social-link" href="https://www.tiktok.com/@gilz156?_t=ZS-8zPO5d12XTU&_r=1" target="_blank">TikTok</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- MODAL -->
+    <div id="contentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Título</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img id="modalPoster" src="" alt="" class="modal-poster">
+                <div class="modal-info">
+                    <div class="info-grid">
+                        <span class="info-label">Año:</span>
+                        <span class="info-value" id="modalYear">-</span>
+                        
+                        <span class="info-label">Género:</span>
+                        <span class="info-value" id="modalGenre">-</span>
+                        
+                        <span class="info-label">Duración:</span>
+                        <span class="info-value" id="modalDuration">-</span>
+                        
+                        <span class="info-label">Director:</span>
+                        <span class="info-value" id="modalDirector">-</span>
+                        
+                        <span class="info-label">Protagonistas:</span>
+                        <span class="info-value" id="modalCast">-</span>
+                    </div>
+                    <div class="rating" id="modalRating">⭐ 0.0</div>
+                    <div class="synopsis">
+                        <h4>Sinopsis</h4>
+                        <p id="modalSynopsis">Información no disponible</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
