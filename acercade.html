@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Acerca de - SIXFILMS</title>
+    <link rel="icon" href="IMG/LOGO_CINEMA.jpg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h2 class="menu-encabezado">SIXFILMS</h2>
+        <ul>
+            <li><a href="index.html">INICIO</a></li> 
+            <li class="menu-separator">|</li>
+            <li><a href="index.html#PELICULAS">PELICULAS</a></li> 
+            <li><a href="index.html#SERIES">SERIES</a></li>
+            <li><a href="index.html#ANIME">ANIME</a></li>
+            <li><a href="index.html#ADULT-SWIT">ADULT-SWIT</a></li>
+            <li class="menu-separator">|</li>
+            <li><a href="index.html#CALCULADORA">CALCULADORA</a></li>
+            <li><a href="acercade.html">ACERCA DE</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <section id="AUTORES">
+            <h1>AUTORES</h1>
+            <div class="authors-container">
+                <div class="author-card">
+                    <img src="IMG/AUTOR_1.jpeg" alt="DAVID ESTEBAN GIL MARTINEZ" data-content="david" class="author-image">
+                </div>
+                <div class="author-card">
+                    <img src="IMG/AUTORA_2.jpeg" alt="DAVAZAY" data-content="davazay" class="author-image">
+                </div>
+            </div>
+        </section>
+
+        <div class="social-box">
+            <h3>Síguenos en redes sociales</h3>
+            <div class="social-icons">
+                <div class="social-item">
+                    <a href="https://www.facebook.com/share/1JBGWSmTxZ/" target="_blank" title="Facebook">
+                        <img src="IMG/LOGO/FACEBOOK.jpeg" alt="Facebook">
+                    </a>
+                    <a class="social-link" href="https://www.facebook.com/share/1JBGWSmTxZ/" target="_blank">Facebook</a>
+                </div>
+                <div class="social-item">
+                    <a href="https://www.instagram.com/gilz156?igsh=MThsNmVrZ25xZjF6OA==" target="_blank" title="Instagram">
+                        <img src="IMG/LOGO/INSTAGRAM.jpeg" alt="Instagram">
+                    </a>
+                    <a class="social-link" href="https://www.instagram.com/gilz156?igsh=MThsNmVrZ25xZjF6OA==" target="_blank">Instagram</a>
+                </div>
+                <div class="social-item">
+                    <a href="https://www.tiktok.com/@gilz156?_t=ZS-8zPO5d12XTU&_r=1" target="_blank" title="TikTok">
+                        <img src="IMG/LOGO/TIKTOK.png" alt="TikTok">
+                    </a>
+                    <a class="social-link" href="https://www.tiktok.com/@gilz156?_t=ZS-8zPO5d12XTU&_r=1" target="_blank">TikTok</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- MODAL -->
+    <div id="contentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Título</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img id="modalPoster" src="" alt="" class="modal-poster">
+                <div class="modal-info">
+                    <div class="info-grid">
+                        <span class="info-label">Nombre:</span>
+                        <span class="info-value" id="modalName">-</span>
+                        
+                        <span class="info-label">Rol:</span>
+                        <span class="info-value" id="modalRole">-</span>
+                        
+                        <span class="info-label">Especialidad:</span>
+                        <span class="info-value" id="modalSpecialty">-</span>
+                    </div>
+                    <div class="author-description">
+                        <h4>Sobre el Autor</h4>
+                        <p id="modalDescription">Información del desarrollador</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .authors-container {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+
+        .author-card {
+            text-align: center;
+            position: relative;
+        }
+
+        .author-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 20px;
+            object-fit: cover;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border: 3px solid #660000;
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .author-image::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(45deg, #ff0040, #660000, #330000, #ff0040);
+            background-size: 400% 400%;
+            animation: authorGlow 3s ease infinite;
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .author-image:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes authorGlow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .author-image:hover {
+            transform: scale(1.08) rotateY(10deg);
+            box-shadow: 0 20px 40px rgba(255, 0, 64, 0.5);
+            border-color: #ff0040;
+        }
+
+        /* Modal Styles Mejorados */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-content {
+            position: relative;
+            background: linear-gradient(145deg, #0f0f0f, #1a0000);
+            margin: 5% auto;
+            padding: 0;
+            width: 80%;
+            max-width: 700px;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(255, 0, 0, 0.4);
+            border: 3px solid #660000;
+            animation: modalSlideIn 0.4s ease-out;
+            overflow: hidden;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-100px) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 35px;
+            background: linear-gradient(135deg, #330000, #660000, #990000);
+            border-bottom: 2px solid #ff0040;
+        }
+
+        .modal-title {
+            color: white;
+            margin: 0;
+            font-size: 2rem;
+            font-weight: bold;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            font-family: 'AliceInWonderland', sans-serif;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 36px;
+            color: white;
+            cursor: pointer;
+            padding: 0;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            font-family: 'AliceInWonderland', sans-serif;
+        }
+
+        .close-btn:hover {
+            background-color: rgba(255, 0, 64, 0.4);
+            transform: rotate(90deg) scale(1.1);
+            box-shadow: 0 0 20px #ff0040;
+        }
+
+        .modal-body {
+            display: flex;
+            padding: 35px;
+            gap: 35px;
+            color: white;
+        }
+
+        .modal-poster {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 3px solid #660000;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        .modal-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 18px 30px;
+            align-items: center;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: #ff0040;
+            font-size: 1.2rem;
+            text-shadow: 0 0 8px #ff0040;
+            font-family: 'AliceInWonderland', sans-serif;
+        }
+
+        .info-value {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 500;
+            font-family: 'AliceInWonderland', sans-serif;
+        }
+
+        .author-description {
+            background: rgba(102, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid #660000;
+        }
+
+        .author-description h4 {
+            color: #ff0040;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            text-shadow: 0 0 8px #ff0040;
+            font-family: 'AliceInWonderland', sans-serif;
+        }
+
+        .author-description p {
+            line-height: 1.7;
+            color: #cccccc;
+            font-size: 1.1rem;
+            font-family: 'AliceInWonderland', sans-serif;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .authors-container {
+                gap: 30px;
+            }
+
+            .author-image {
+                width: 200px;
+                height: 200px;
+            }
+
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+            }
+
+            .modal-body {
+                flex-direction: column;
+                padding: 25px;
+                text-align: center;
+            }
+
+            .modal-poster {
+                width: 200px;
+                height: 200px;
+                margin: 0 auto;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 12px;
+            }
+
+            .info-label {
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .author-image {
+                width: 170px;
+                height: 170px;
+            }
+
+            .modal-title {
+                font-size: 1.6rem;
+            }
+
+            .modal-header {
+                padding: 20px 25px;
+            }
+        }
+    </style>
+
+    <script>
+        // Base de datos de autores actualizada
+        const contentDatabase = {
+            david: {
+                title: "DAVID ESTEBAN GIL MARTINEZ",
+                name: "David Esteban Gil Martinez",
+                role: "Desarrollador Web Full-Stack",
+                specialty: "Frontend & Backend Development",
+                description: "Desarrollador web especializado en tecnologías modernas como JavaScript, React, Node.js y bases de datos. Apasionado por crear experiencias de usuario únicas con diseños innovadores y funcionalidades avanzadas. Creador de la plataforma SIXFILMS y experto en integración de APIs."
+            },
+            davazay: {
+                title: "DAVAZAY",
+                name: "Davazay",
+                role: "Diseñadora UI/UX & Creative Director",
+                specialty: "Diseño Visual & Experiencia de Usuario",
+                description: "Diseñadora creativa especializada en interfaces de usuario y experiencias digitales inmersivas. Experto en diseño gráfico, branding y conceptualización visual. Responsable del diseño gore/dark de SIXFILMS y de la estética visual que define la identidad de la plataforma."
+            }
+        };
+
+        // Funcionalidad del Modal
+        class ContentModal {
+            constructor() {
+                this.modal = document.getElementById('contentModal');
+                this.closeBtn = document.getElementById('closeModal');
+                this.init();
+            }
+            
+            init() {
+                this.closeBtn.addEventListener('click', () => this.close());
+                
+                this.modal.addEventListener('click', (e) => {
+                    if (e.target === this.modal) {
+                        this.close();
+                    }
+                });
+                
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && this.modal.style.display === 'block') {
+                        this.close();
+                    }
+                });
+            }
+            
+            open(contentKey, imageSrc) {
+                const content = contentDatabase[contentKey];
+                
+                if (!content) {
+                    console.error('Contenido no encontrado:', contentKey);
+                    return;
+                }
+                
+                document.getElementById('modalTitle').textContent = content.title;
+                document.getElementById('modalName').textContent = content.name;
+                document.getElementById('modalRole').textContent = content.role;
+                document.getElementById('modalSpecialty').textContent = content.specialty;
+                document.getElementById('modalDescription').textContent = content.description;
+                document.getElementById('modalPoster').src = imageSrc;
+                document.getElementById('modalPoster').alt = content.title;
+                
+                this.modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+            
+            close() {
+                this.modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Inicializar cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar modal
+            const modal = new ContentModal();
+
+            // Event listeners para imágenes de autores (abrir modal)
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('author-image') && e.target.hasAttribute('data-content')) {
+                    const contentKey = e.target.getAttribute('data-content');
+                    const imageSrc = e.target.src;
+                    modal.open(contentKey, imageSrc);
+                }
+            });
+
+            // Smooth scroll para navegación
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const href = this.getAttribute('href');
+                    if (href.startsWith('index.html#')) {
+                        window.location.href = href;
+                    } else {
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
