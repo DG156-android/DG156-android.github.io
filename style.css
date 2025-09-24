@@ -1,7 +1,6 @@
-/* Importar fuente personalizada */
 @font-face {
     font-family: 'AliceInWonderland';
-    src: url('AliceInWonderland-z051.ttf') format('truetype');
+    src: url('fonts/AliceInWonderland-z051.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -36,12 +35,12 @@ header {
     backdrop-filter: blur(10px);
     border-bottom: 2px solid #660000;
     z-index: 1000;
-    padding: 20px 0 25px 0; /* Aumentado el padding vertical */
+    padding: 20px 0 25px 0;
     box-shadow: 0 2px 20px rgba(255, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px; /* Espacio entre el título y el menú */
+    gap: 15px;
 }
 
 header .menu-encabezado {
@@ -93,7 +92,7 @@ header ul li a:hover {
 
 /* MAIN CONTENT AJUSTADO */
 main {
-    padding-top: 140px; /* Aumentado para acomodar el header más alto */
+    padding-top: 140px;
 }
 
 section {
@@ -187,215 +186,6 @@ section h1::after {
 
 .carousel-btn.next {
     right: 20px;
-}
-
-/* CALCULADORA GORE */
-#CALCULADORA {
-    background: radial-gradient(circle at center, #1a0000, #000);
-    border: 2px solid #660000;
-    border-radius: 20px;
-    margin: 40px auto;
-    box-shadow: 0 0 50px rgba(255, 0, 0, 0.3);
-    position: relative;
-}
-
-#CALCULADORA h1 {
-    font-family: 'AliceInWonderland', 'Arial', sans-serif;
-}
-
-#CALCULADORA::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, #ff0040, #660000, #330000, #ff0040);
-    background-size: 400% 400%;
-    animation: borderGlow 3s ease infinite;
-    border-radius: 20px;
-    z-index: -1;
-}
-
-@keyframes borderGlow {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-}
-
-.calculadora-container {
-    display: flex;
-    justify-content: center;
-    padding: 40px 20px;
-}
-
-.calculadora {
-    background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
-    border: 3px solid #330000;
-    border-radius: 25px;
-    padding: 30px;
-    box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.8),
-        inset 0 0 20px rgba(255, 0, 0, 0.1);
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 15px;
-    max-width: 500px;
-    width: 100%;
-    position: relative;
-}
-
-.calculadora::after {
-    content: '';
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    right: 5px;
-    bottom: 5px;
-    border: 1px solid #660000;
-    border-radius: 20px;
-    pointer-events: none;
-}
-
-.pantalla {
-    grid-column: 1 / -1;
-    background: linear-gradient(145deg, #000, #1a0000);
-    border: 3px solid #660000;
-    border-radius: 15px;
-    padding: 25px;
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: right;
-    color: #ff4444;
-    margin-bottom: 20px;
-    min-height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    word-wrap: break-word;
-    word-break: break-all;
-    overflow: hidden;
-    text-shadow: 0 0 10px #ff4444;
-    box-shadow: 
-        inset 0 5px 15px rgba(0, 0, 0, 0.5),
-        0 0 20px rgba(255, 0, 0, 0.2);
-    font-family: 'AliceInWonderland', monospace, sans-serif;
-}
-
-.btn {
-    height: 70px;
-    border: 2px solid #330000;
-    border-radius: 15px;
-    font-size: 1.3em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    color: white;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-    position: relative;
-    overflow: hidden;
-    font-family: 'AliceInWonderland', sans-serif;
-}
-
-.btn::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 0;
-    height: 0;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
-    transition: all 0.3s ease;
-    border-radius: 50%;
-}
-
-.btn:hover::before {
-    width: 200%;
-    height: 200%;
-}
-
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-}
-
-.btn:active {
-    transform: translateY(0);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* Números - Rojo sangre */
-.btn:not(.control):not(.parentesis):not(.igual):not([data-operator]):not(.function) {
-    background: linear-gradient(145deg, #660000, #990000);
-    border-color: #330000;
-}
-
-.btn:not(.control):not(.parentesis):not(.igual):not([data-operator]):not(.function):hover {
-    background: linear-gradient(145deg, #990000, #cc0000);
-    border-color: #660000;
-    box-shadow: 0 0 20px #ff0000;
-}
-
-/* Botones de control (C, ←) - Rojo intenso */
-.btn.control {
-    background: linear-gradient(145deg, #990000, #cc0000);
-    border-color: #660000;
-    font-size: 1.1em;
-}
-
-.btn.control:hover {
-    background: linear-gradient(145deg, #cc0000, #ff0000);
-    box-shadow: 0 0 25px #ff0000;
-}
-
-/* Paréntesis - Gris oscuro */
-.btn.parentesis {
-    background: linear-gradient(145deg, #333, #555);
-    border-color: #222;
-}
-
-.btn.parentesis:hover {
-    background: linear-gradient(145deg, #555, #777);
-    box-shadow: 0 0 15px #666;
-}
-
-/* Operadores (+, -, ×, ÷) - Naranja oscuro */
-.btn[data-operator] {
-    background: linear-gradient(145deg, #663300, #996633);
-    border-color: #331a00;
-}
-
-.btn[data-operator]:hover {
-    background: linear-gradient(145deg, #996633, #cc9966);
-    box-shadow: 0 0 20px #cc6600;
-}
-
-/* Botón igual - Dorado oscuro */
-.btn.igual {
-    background: linear-gradient(145deg, #664400, #998800);
-    border-color: #332200;
-}
-
-.btn.igual:hover {
-    background: linear-gradient(145deg, #998800, #ccaa00);
-    box-shadow: 0 0 25px #ffcc00;
-}
-
-/* Funciones científicas - Púrpura oscuro */
-.btn.function {
-    background: linear-gradient(145deg, #330066, #550099);
-    border-color: #220044;
-    font-size: 1.1em;
-}
-
-.btn.function:hover {
-    background: linear-gradient(145deg, #550099, #7700cc);
-    box-shadow: 0 0 20px #9900ff;
-}
-
-/* Botón cero ocupa 2 columnas */
-#cero {
-    grid-column: span 2;
 }
 
 /* SOCIAL BOX */
@@ -503,6 +293,7 @@ section h1::after {
     background: linear-gradient(135deg, #330000, #660000);
     border-radius: 20px 20px 0 0;
     border-bottom: 2px solid #990000;
+    position: relative; /* Añade esta línea */
 }
 
 .modal-title {
@@ -515,20 +306,24 @@ section h1::after {
 }
 
 .close-btn {
-    background: none;
-    border: none;
-    font-size: 32px;
+    position: absolute; /* Añade esta línea */
+    top: 15px; /* Añade esta línea */
+    right: 15px; /* Añade esta línea */
+    background: rgba(255, 0, 0, 0.8); /* Modifica el color de fondo */
+    border: 2px solid #ff0040; /* Añade borde */
+    font-size: 24px; /* Reduce el tamaño */
     color: white;
     cursor: pointer;
-    padding: 0;
-    width: 40px;
-    height: 40px;
+    padding: 8px; /* Reduce el padding */
+    width: 35px; /* Reduce el ancho */
+    height: 35px; /* Reduce la altura */
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     transition: all 0.3s ease;
     font-family: 'AliceInWonderland', sans-serif;
+    z-index: 1001; /* Añade esta línea */
 }
 
 .close-btn:hover {
@@ -542,6 +337,27 @@ section h1::after {
     padding: 30px;
     gap: 30px;
     color: white;
+    max-height: 60vh; /* Añade esta línea */
+    overflow-y: auto; /* Añade esta línea */
+}
+
+/* Añade estos estilos para el scrollbar personalizado */
+.modal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background: rgba(102, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background: #660000;
+    border-radius: 4px;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+    background: #990000;
 }
 
 .modal-poster {
@@ -643,34 +459,15 @@ section h1::after {
         padding: 10px 15px;
     }
     
-    .calculadora {
-        padding: 20px;
-        gap: 10px;
-        max-width: 400px;
-    }
-    
-    .btn {
-        height: 60px;
-        font-size: 1.1em;
-    }
-    
-    .btn.function {
-        font-size: 1em;
-    }
-    
-    .pantalla {
-        font-size: 1.6em;
-        padding: 20px;
-        min-height: 70px;
-    }
-    
     .social-icons {
         gap: 20px;
     }
     
     .modal-content {
         width: 95%;
-        margin: 10% auto;
+        margin: 5% auto; /* Cambia de 10% a 5% */
+        max-height: 90vh; /* Añade esta línea */
+        overflow-y: auto; /* Añade esta línea */
     }
     
     .modal-body {
@@ -705,29 +502,16 @@ section h1::after {
         padding-top: 110px;
     }
     
-    .calculadora {
-        padding: 15px;
-        gap: 8px;
-        max-width: 350px;
-    }
-    
-    .btn {
-        height: 50px;
-        font-size: 1em;
-    }
-    
-    .btn.function {
-        font-size: 0.9em;
-    }
-    
-    .pantalla {
-        font-size: 1.4em;
-        padding: 15px;
-        min-height: 60px;
-    }
-    
     .carousel-track img {
         width: 120px;
         height: 180px;
     }
+
+    .modal-content {
+        width: 98%;
+        margin: 2% auto; /* Añade esta línea */
+        max-height: 95vh; /* Añade esta línea */
+    }
+
+   
 }
